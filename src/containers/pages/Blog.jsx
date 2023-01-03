@@ -3,10 +3,15 @@ import Navbar from "components/navigation/Navbar"
 import Layout from "hocs/layouts/Layout"
 import { useEffect } from "react"
 import {Helmet} from "react-helmet-async"
+import { get_categories } from "redux/actions/categories/categories"
+import { connect } from "react-redux"
 
-function Blog() {
+
+function Blog({get_categories, categories}) {
   useEffect(() => {
     window.scrollTo(0,0)
+    get_categories()
+    get_categories_blog_list()
   }, [])
 
   return (
@@ -32,4 +37,10 @@ function Blog() {
   )
 }
 
-export default Blog
+const mapStateToProps = state =>({
+  categories: state.categories.categories
+})
+
+export default connect(mapStateToProps,{
+  get_categories
+})(Blog)

@@ -46,13 +46,14 @@ INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 #CKEditor Conf
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source']
-        ],
+    #    'toolbar': 'Custom',
+    'toolbar': 'full',
+    #    'toolbar_Custom': [
+    #        ['Bold', 'Italic', 'Underline'],
+    #        ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+    #        ['Link', 'Unlink'],
+    #       ['RemoveFormat', 'Source']
+    #  ],
         'autoParagraph': False
     }
 }

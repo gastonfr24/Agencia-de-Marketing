@@ -30,29 +30,29 @@ function Header() {
                     </span>
               </h1>
 
-                <ul className="flex gap-8 pt-12">
+                <ul className="flex lg:gap-8 gap-3 pt-12">
                   <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className="mt-6 text-2xl font-medium leading-8 text-gray-700 sm:text-center">
+                    <Link to='/servicios/#' className="mt-6 text-lg lg:text-2xl font-medium leading-8 text-gray-700 sm:text-center">
                     Web
                     </Link>
                   </li>
                   <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className="mt-6 text-2xl font-medium leading-8 text-gray-700 sm:text-center">
+                    <Link to='/servicios/#' className="mt-6 text-lg lg:text-2xl font-medium leading-8 text-gray-700 sm:text-center">
                     Apps
                     </Link>
                   </li>
                   <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className="mt-6 text-2xl font-medium leading-8 text-gray-700 sm:text-center">
+                    <Link to='/servicios/#' className="mt-6 text-lg lg:text-2xl font-medium leading-8 text-gray-700 sm:text-center">
                     Videojuegos
                     </Link>
                   </li>
                   <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className="mt-6 text-2xl font-medium leading-8 text-gray-700 sm:text-center">
+                    <Link to='/servicios/#' className="mt-6 text-lg lg:text-2xl font-medium leading-8 text-gray-700 sm:text-center">
                     Marketing
                     </Link>
                   </li>
                   <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className="mt-6 text-2xl font-medium leading-8 text-gray-700 sm:text-center">
+                    <Link to='/servicios/#' className="mt-6 text-lg lg:text-2xl font-medium leading-8 text-gray-700 sm:text-center">
                     Consultorías
                     </Link>
                   </li>
