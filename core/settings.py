@@ -20,6 +20,8 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS_DEV')
 
 
 # Application definition
+DOMAIN = os.environ.get('DOMAIN')
+
 
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -32,14 +34,15 @@ DJANGO_APPS = [
 
 PROJECT_APPS = [
     'apps.blog',
-    'apps.category'
+    'apps.category',
+    'apps.user'
 ]
 
 THIRD_PARTY_APPS = [
     'corsheaders',
     'rest_framework',
     'djoser',
-    'social_djago',
+    'social_django',
     'ckeditor',
     'ckeditor_uploader',
     'rest_framework_simplejwt',
@@ -199,11 +202,16 @@ DJOSER = {
     'SEND_ACTIVATION_EMAIL': True,
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
     'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS':['http://127.0.0.1:8000/google','http://127.0.0.1:8000/facebook'],
-    #'SERIALIZERS': {},
+    'SERIALIZERS': {
+        'user_create': 'apps.user.serializers.UserSerializer',
+        'user': 'apps.user.serializers.UserSerializer',
+        'current_user': 'apps.user.serializers.UserSerializer',
+        'user_delete': 'djoser.serializers.UserDeleteSerializer',
+    },
 }
 
 
-#AUTH_USER_MODEL = 'user.UserAccount'
+AUTH_USER_MODEL = 'user.UserAccount'
 
 
 CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEV')
