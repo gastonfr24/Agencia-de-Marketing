@@ -13,6 +13,9 @@ import Contact from "containers/pages/Contact";
 
 // Animaciones
 import {AnimatePresence} from "framer-motion"
+import Category from "containers/pages/Category";
+import Search from "containers/pages/Search";
+import PostDetail from "containers/pages/PostDetail";
 
 export default function AnimatedRoutes() {
     const location = useLocation()
@@ -30,6 +33,9 @@ export default function AnimatedRoutes() {
     <Route path="/nosotros" element={<About />} />
     <Route path="/carreras" element={<Carrers />} />
     <Route path="/blog" element={<Blog />} />
+    <Route path="/blog/:slug" element={<PostDetail />} />
+    <Route path="/search/:term" element={<Search />} />
+    <Route path="/category/:slug" element={<Category />} />
     <Route path="/contacto" element={<Contact />} />
   </Routes>
       </AnimatePresence>

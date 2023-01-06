@@ -77,7 +77,7 @@ export const get_blog_list_category = (slug) => async dispatch =>{
         }
     
         try{
-            const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/by_category?slug=${slug}`, config)
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/by_category?category_slug=${slug}`, config)
             
             if(res.status === 200){
                 dispatch({
@@ -106,7 +106,7 @@ export const get_blog_list_category_page = (slug, page) => async dispatch =>{
         }
     
         try{
-            const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/by_category?slug=${slug}&p=${page}`, config)
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/by_category?category_slug=${slug}&p=${page}`, config)
             
             if(res.status === 200){
                 dispatch({
@@ -154,7 +154,7 @@ export const get_blog = (slug) => async dispatch => {
 }
 
 
-export const search_blog_list = (search_term) => async dispatch =>{
+export const search_blog_list = (term) => async dispatch =>{
     const config = {
         headers:{
             'Accept': 'application/json'
@@ -162,7 +162,7 @@ export const search_blog_list = (search_term) => async dispatch =>{
     }
 
     try{
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/search?s=${search_term}`, config)
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/search?s=${term}`, config)
         
         if(res.status === 200){
             dispatch({
@@ -189,9 +189,9 @@ export const search_blog_list_page = (search_term, page) => async dispatch =>{
             'Accept': 'application/json'
         }
     }
-
+    console.log('page = '+page)
     try{
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/search?s=${search_term}&p=${page}`, config)
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/search?p=${page}&s=${search_term}`, config)
         
         if(res.status === 200){
             dispatch({
