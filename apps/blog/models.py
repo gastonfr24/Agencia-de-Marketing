@@ -2,6 +2,11 @@ from django.db import models
 from apps.category.models import Category
 from django.utils import timezone
 from ckeditor.fields import RichTextField 
+import uuid
+
+
+from django.conf import settings
+User = settings.AUTH_USER_MODEL
 
 # Directorio de Imagen
 def blog_thumbnail_directory(instance, filename):
@@ -18,14 +23,15 @@ class Post(models.Model):
     options = (('draft', 'Draft'),
                 ('published', 'Published'),)
 
-    title = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, unique=True)
-    thumbnail = models.ImageField(upload_to=blog_thumbnail_directory)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    slug = models.SlugField(max_length=255, unique=True, default=uuid.uuid4)
+    thumbnail = models.ImageField(upload_to=blog_thumbnail_directory, blank=True, null=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     description = models.TextField(max_length=255)
     content = RichTextField()
-    time_read = models.IntegerField()
+    time_read = models.IntegerField(blank=True, null=True)
     status = models.CharField(max_length=10, choices=options, default='draft')
-    category = models.ForeignKey(Category, on_delete=models.PROTECT)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, blank=True, null=True)
     published = models.DateTimeField(default=timezone.now)
     views = models.IntegerField(default=0, blank=True)
 

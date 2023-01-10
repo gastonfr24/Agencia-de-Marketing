@@ -22,6 +22,9 @@ import {
     FaLinkedinIn,
   } from 'react-icons/fa';
 
+// Example
+import background from "assets/img/back.jpg"
+
 function PostDetail({get_blog, post, get_blog_list_category, posts}) {
 
     const params = useParams()
@@ -56,11 +59,11 @@ function PostDetail({get_blog, post, get_blog_list_category, posts}) {
     post && post.slug=== slug ?
     <div classNameName="pt-28">
  
-    <div className="mt-6 bg-gray-50">
+    <div className="mt-6">
               <div className=" px-10 mx-auto">
-                    
+
                   {/*   <!--author--> */}
-                 <div className="max-w-full mx-auto lg:mx-12 bg-gray-50 pt-28">
+                 <div className="w-full mx-auto lg:mx-12 pt-28">
                     
 
                                         {/* 	<!--post heading--> */}
@@ -80,13 +83,14 @@ function PostDetail({get_blog, post, get_blog_list_category, posts}) {
                             </div>
 
 
-                            <div className="max-w-full  mx-auto md:text-2xl text-gray-900 mt-4 rounded bg-gray-100">
+                            <div className="w-full bg-white  mx-auto md:text-2xl text-gray-900 mt-4 rounded">
 
                             {/*    	<!--content body--> */}
-                                <div>
+                                <div className="w-11/12">
                                         <p className="mt-24 lg:p-8 p-4 pb-6 text-semibold">{post.description}</p>
                                 </div>
                                     </div>
+
      {/* Social icons */}
      <div className='hidden lg:flex fixed flex-col top-[30%] left-0'>
         <ul>
@@ -117,6 +121,11 @@ function PostDetail({get_blog, post, get_blog_list_category, posts}) {
 
         </ul>
       </div>
+
+      <div className=" w-full mt-24 absolute inset-x-0 top-[calc(100%-20rem)] -z-10 transform-gpu overflow-hidden bg-white lg:top-[calc(100%-45rem)] sm:top-[calc(100%-35rem)]">
+              <img src={post.thumbnail} className='w-full h-full object-cover opacity-25'/>
+            </div>
+
                         <img className="object-cover w-full shadow-sm h-full" src={post.thumbnail}/>
 
 
@@ -135,7 +144,7 @@ function PostDetail({get_blog, post, get_blog_list_category, posts}) {
                 
               {/*      <!--end post header--> */}
                         {/* <!--post content--> */}
-             <div className="max-w-full lg:px-12 lg:text-xl mx-auto text-gray-900 mt-4 rounded bg-gray-100">
+             <div className="max-w-full lg:px-12 lg:text-xl mx-auto text-gray-900 mt-4 rounded">
 
           {/*    	<!--content body--> */}
                  <div>

@@ -16,7 +16,8 @@ class PostSerializer(serializers.ModelSerializer):
             'time_read',
             'published',
             'views',
-            'category'
+            'category',
+            'status'
         ]
 class PostListSerializer(serializers.ModelSerializer):
     category = CategorySerializer()
@@ -33,5 +34,6 @@ class PostListSerializer(serializers.ModelSerializer):
             'time_read',
             'published',
             'views',
-            'category'
+            'category',
+            'status'
         ]
