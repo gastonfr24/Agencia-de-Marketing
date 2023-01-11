@@ -6,12 +6,14 @@ function Header() {
   
     return (
     <main>
-        <div className="relative px-6 lg:px-8">
-        <div className="mx-auto max-w-full xl:mx-12 xl:pt-40 xl:pb-64 lg:pt-40 lg:pb-48 pt-20 pb-32 sm:pt-48 sm:pb-40">
+        <div className="relative px-6 ">
+        <div className="lg:mx-2 max-w-full xl:pt-40 xl:pb-64 lg:pt-40 lg:pb-48 pt-20 pb-32 sm:pt-48 sm:pb-40">
             <div>
         
               <div>
-              <h1 className="text-4xl font-semibold tracking-tight pb-16  sm:text-7xl">
+              <h1 className="text-4xl font-semibold tracking-tight pb-16  
+             sm:text-5xl
+              ">
               Agency for <span> </span>
               <span className="text-orange-cus">
                   <Typewriter
@@ -30,36 +32,36 @@ function Header() {
                     </span>
               </h1>
 
-                <ul className="flex lg:gap-8 gap-3 pt-12">
+                <ul className="flex lg:gap-8 gap-3 pt-10">
                   <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className="mt-6 text-lg lg:text-2xl font-medium leading-8 text-gray-700 sm:text-center">
+                    <Link to='/servicios/#' className=" text-lg lg:text-lg font-medium leading-8 text-black sm:text-center">
                     Web
                     </Link>
                   </li>
                   <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className="mt-6 text-lg lg:text-2xl font-medium leading-8 text-gray-700 sm:text-center">
+                    <Link to='/servicios/#' className=" text-lg lg:text-lg font-medium leading-8 text-black sm:text-center">
                     Apps
                     </Link>
                   </li>
                   <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className="mt-6 text-lg lg:text-2xl font-medium leading-8 text-gray-700 sm:text-center">
+                    <Link to='/servicios/#' className=" text-lg lg:text-lg font-medium leading-8 text-black sm:text-center">
                     Videojuegos
                     </Link>
                   </li>
                   <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className="mt-6 text-lg lg:text-2xl font-medium leading-8 text-gray-700 sm:text-center">
+                    <Link to='/servicios/#' className=" text-lg lg:text-lg font-medium leading-8 textblack0 sm:text-center">
                     Marketing
                     </Link>
                   </li>
                   <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className="mt-6 text-lg lg:text-2xl font-medium leading-8 text-gray-700 sm:text-center">
+                    <Link to='/servicios/#' className=" text-lg lg:text-lg font-medium leading-8 text-black sm:text-center">
                     Consultorías
                     </Link>
                   </li>
                 </ul>
 
               </div>
-              <div className="absolute inset-x-0 top-[calc(100%-20rem)] -z-10 transform-gpu blur-none overflow-hidden bg-white lg:top-[calc(100%-45rem)] sm:top-[calc(100%-35rem)]">
+              <div className="absolute inset-x-0 top-[calc(100%-20rem)] -z-10 transform-gpu blur-none overflow-hidden bg-white lg:top-[calc(100%-39rem)] sm:top-[calc(100%-35rem)]">
               <img src={background} className='w-full h-full object-cover opacity-40'/>
             </div>
             </div>

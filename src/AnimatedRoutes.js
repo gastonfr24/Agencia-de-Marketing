@@ -16,6 +16,8 @@ import {AnimatePresence} from "framer-motion"
 import Category from "containers/pages/Category";
 import Search from "containers/pages/Search";
 import PostDetail from "containers/pages/PostDetail";
+import Ecommerce from "./containers/pages/cases/Ecommerce";
+import JavascriptDev from "containers/pages/services/JavascriptDev";
 
 export default function AnimatedRoutes() {
     const location = useLocation()
@@ -37,6 +39,13 @@ export default function AnimatedRoutes() {
     <Route path="/search/:term" element={<Search />} />
     <Route path="/category/:slug" element={<Category />} />
     <Route path="/contacto" element={<Contact />} />
+
+      {/* Cases */}
+      <Route path="/casos/ecommerce" element={<Ecommerce />} />
+
+        {/* Services */}
+        <Route path="/servicios/javascript" element={<JavascriptDev />} />
+
   </Routes>
       </AnimatePresence>
 

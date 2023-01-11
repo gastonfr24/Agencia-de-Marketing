@@ -1,109 +1,71 @@
-const posts = [
-    {
-      title: 'Boost your conversion rate',
-      href: '#',
-      category: { name: 'Article', href: '#', color: 'bg-indigo-100 text-indigo-800' },
-      description:
-        'Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.',
-      date: 'Mar 16, 2020',
-      datetime: '2020-03-16',
-      author: {
-        name: 'Paul York',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-      readingTime: '6 min',
-    },
-    {
-      title: 'How to use search engine optimization to drive sales',
-      href: '#',
-      category: { name: 'Video', href: '#', color: 'bg-pink-100 text-pink-800' },
-      description:
-        'Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.',
-      date: 'Mar 10, 2020',
-      datetime: '2020-03-10',
-      author: {
-        name: 'Dessie Ryan',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-      readingTime: '4 min',
-    },
-    {
-      title: 'Improve your customer experience',
-      href: '#',
-      category: { name: 'Case Study', href: '#', color: 'bg-green-100 text-green-800' },
-      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab iure iusto fugiat commodi sequi.',
-      date: 'Feb 12, 2020',
-      datetime: '2020-02-12',
-      author: {
-        name: 'Easer Collins',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-      readingTime: '11 min',
-    },
-  ]
-  
+import moment from "moment"
+import { useEffect } from "react"
+import { connect } from "react-redux"
+import { Link } from "react-router-dom"
+import { get_blog_list } from "redux/actions/blog/blog"
+import d from "assets/img/d.jpg"  
+
   function classNames(...classes) {
+
     return classes.filter(Boolean).join(' ')
   }
   
-  export default function BlogList() {
+  function BlogList({get_blog_list, posts}) {
+
+    useEffect(() => {
+      get_blog_list()
+    
+    }, [])
+    
     return (
-      <div className="bg-white px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
-        <div className="relative  max-w-lg divide-y-2 divide-gray-200 lg:max-w-7xl">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Recent publications</h2>
-            <p className="mt-3 text-xl text-gray-500 sm:mt-4">
-              Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus
-              arcu.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-            {posts.map((post) => (
-              <div key={post.title}>
-                <div>
-                  <a href={post.category.href} className="inline-block">
-                    <span
-                      className={classNames(
-                        post.category.color,
-                        'inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium'
-                      )}
-                    >
-                      {post.category.name}
-                    </span>
-                  </a>
-                </div>
-                <a href={post.href} className="mt-4 block">
-                  <p className="text-xl font-semibold text-gray-900">{post.title}</p>
-                  <p className="mt-3 text-base text-gray-500">{post.description}</p>
-                </a>
-                <div className="mt-6 flex items-center">
-                  <div className="flex-shrink-0">
-                    <a href={post.author.href}>
-                      <span className="sr-only">{post.author.name}</span>
-                      <img className="h-10 w-10 rounded-full" src={post.author.imageUrl} alt="" />
+      <>
+            <div className="">
+        <div className="mx-8 lg:mx-auto lg:max-w-7xl py-24 sm:py-32 lg:px-4 ">
+          <div className="mx-auto max-w-2xl lg:max-w-none"></div>
+                    <div className="max-w-5xl mb-8">
+              <h2 className="lg:text-5xl text-2xl font-semibold tracking-wide text-gray-900 leading-tight">
+              Nuestas prácticas y conocimientos
+              </h2>
+
+            </div>
+
+
+      <div className="grid grid-cols-12 gap-7 max-w-full lg:px-12 pt-10">
+
+        {posts&&posts.map((post_cat,index) => (
+          <>{
+            <div className="col-span-12 
+            md:col-span-6">
+                   <div key={index} className="rounded-xl group flex-col items-start overflow-hidden shadow-sm  hover:scale-95 transition-transform duration-1000">
+
+                    <a href="#_" className="block transition duration-1000 ease-out transform group-hover:scale-125">
+                        <img className="object-cover w-full shadow-sm h-full" src={post_cat.thumbail}/>
                     </a>
-                  </div>
-                  <div className="ml-3">
-                    <p className="text-sm font-medium text-gray-900">
-                      <a href={post.author.href}>{post.author.name}</a>
-                    </p>
-                    <div className="flex space-x-1 text-sm text-gray-500">
-                      <time dateTime={post.datetime}>{post.date}</time>
-                      <span aria-hidden="true">&middot;</span>
-                      <span>{post.readingTime} read</span>
-                    </div>
-                  </div>
+
+
                 </div>
-              </div>
-            ))}
-          </div>
+                <div className="relative flex flex-col items-start px-6 bg-white py-7 rounded-b-2xl">
+
+<h2 className="text-base text-gray-900 font-semibold sm:text-lg md:text-2xl group-hover:"><a href="#_">{post_cat.title.length > 70 ? post_cat.title.slice(0,66)+' ...':post_cat.title}</a></h2>
+</div>
+                </div>
+                }
+                </>
+      ))}
+            </div>
         </div>
       </div>
+      </>
     )
   }
+
+  const mapStateToProps = (state) => ({
+    posts: state.blog.blog_list,
+
+  });
+  
+  export default connect(mapStateToProps, {
+    get_blog_list,
+  })(BlogList);
+
+  

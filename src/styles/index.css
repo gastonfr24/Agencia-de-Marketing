@@ -35,13 +35,20 @@ body {
 }
 
 .rec.rec-arrow {
-  background-color: #0B1014;
-  color: #eeeeee;
+  background-color: #eeeeee;
+  color: #FF561E;
+  }
+
+  rec.rec-arrow-right:hover {
+    background-color: #eeeeee;
+    color: #FF561E;
   }
   
   .rec.rec-arrow:hover {
-  background-color: #393b3f;
-  }
+    background-color: #eeeeee;
+    color: #FF561E;
+    }
+
   
   .rec.rec-arrow:disabled {
     visibility: hidden;

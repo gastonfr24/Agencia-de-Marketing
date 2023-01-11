@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 
 function ServiceCard({post}) {
@@ -13,9 +14,9 @@ function ServiceCard({post}) {
                 {post.description}
             </p>
             <div className=" absolute bottom-0 left-0 p-8">                
-            <h2 className="group-hover:text-orange-cus transition duration-300 ease-in-out items-end text-xl font-semibold text-gray-900 pt-8">
+            <Link to={post.href} className="group-hover:text-orange-cus transition duration-300 ease-in-out items-end text-xl font-semibold text-gray-900 pt-8">
                 Learn More
-            </h2>
+            </Link>
             </div>
         </div>
     </div>

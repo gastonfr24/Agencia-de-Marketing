@@ -68,7 +68,7 @@ const  breakPoints = [
 
 function CasesList() {
   return(
-    <div className="relative  px-4 pt-16 pb-20 sm:px-6 lg:px-8  lg:pb-28">
+    <div className="relative pt-16 pb-2 lg:pb-28">
     <div className="absolute inset-0">
       <div className="h-1/3 bg-white sm:h-2/3" />
     </div>

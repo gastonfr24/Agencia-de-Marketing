@@ -9,6 +9,7 @@ import CTA from "components/home/CTA"
 import LogoCloud from "components/home/LogoCloud"
 import BlogList from "components/home/BlogList"
 import { useEffect } from "react"
+import CasesList from "components/cases/CasesList"
 
 
 function Home() {
@@ -19,10 +20,11 @@ function Home() {
   return (
     <Layout>
       <Navbar/>
-      <div className="pt-28">
+      <div className="pt-20">
       <Header/>
       <Incentives/>
-      <UseCases/>
+      {/* <UseCases/> */}
+      <CasesList/>
       <Features/>
       <CTA/>
       <LogoCloud/>

@@ -11,12 +11,12 @@ import {BiCodeBlock} from 'react-icons/bi'
 
 const posts_software = [
   {
-    title: 'Boost your conversion rate',
+    title: 'Javascript Developers',
     icon: BiCodeBlock,
-    href: '#',
-    category: { name: 'Article', href: '#' },
+    href: '/servicios/javascript',
+    category: { name: 'Development', href: '#' },
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+      'Talented and agile javascript developers for your project, available 24/7.',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
     imageUrl:

@@ -24,6 +24,9 @@ import {
 
 // Example
 import background from "assets/img/back.jpg"
+import sample1 from "assets/img/d.jpg"
+import sample2 from "assets/img/f.jpg"
+
 
 function PostDetail({get_blog, post, get_blog_list_category, posts}) {
 
@@ -60,20 +63,20 @@ function PostDetail({get_blog, post, get_blog_list_category, posts}) {
     <div classNameName="pt-28">
  
     <div className="mt-6">
-              <div className=" px-10 mx-auto">
+              <div className="mx-auto">
 
                   {/*   <!--author--> */}
-                 <div className="w-full mx-auto lg:mx-12 pt-28">
+                 <div className="w-full mx-auto pt-28">
                     
 
                                         {/* 	<!--post heading--> */}
-                                        <div className="ml-8">
+                                        <div className="ml-8 px-10 lg:mx-12">
                                         <p
                             className="max-w-full mx-auto  text-4xl sm:text-3xl md:text-6xl lg:text-6xl xl:text-6xl font-semibold text-black">{post.title}</p>
                                             </div>
                         {/*     <!--post views--> */}
-                            <div className="flex justify-start items-center mt-8 px-6 ml-3">
-                                <p className="text-base text-orange-cus font-semibold bg-gray-100 rounded-full hover:text-green-500">{post.views}</p>
+                            <div className="px-16 lg:mx-12 flex justify-start items-center mt-8 ml-3 pb-10">
+                                <p className="text-base text-orange-cus font-semibold rounded-full hover:text-green-500">{post.views}</p>
                                 <p className="text-base text-gray-800 font-semibold ml-2">Views</p>
                                 <span className=" text-base text-gray-800 font-semibold ml-6 hover:text-orange-cus transition duration-500 ease-in-out"><Link to={`/category/${post.category.slug}`}>{post.category.name}</Link></span> <span className="text-gray-300">&middot;</span> 
                                 <span className="text-base text-gray-800 font-semibold ml-6">{moment(post.published).format('LL')}</span> <span className="text-gray-300">&middot;</span>
@@ -83,11 +86,11 @@ function PostDetail({get_blog, post, get_blog_list_category, posts}) {
                             </div>
 
 
-                            <div className="w-full bg-white  mx-auto md:text-2xl text-gray-900 mt-4 rounded">
+                            <div className=" w-full bg-white  mx-auto md:text-2xl text-gray-900 pt-10 rounded">
 
                             {/*    	<!--content body--> */}
-                                <div className="w-11/12">
-                                        <p className="mt-24 lg:p-8 p-4 pb-6 text-semibold">{post.description}</p>
+                                <div className="w-10/12 px-10 lg:mx-6 pb-2">
+                                        <p className="lg:p-8 p-4 pb-6 text-semibold">{post.description}</p>
                                 </div>
                                     </div>
 
@@ -123,18 +126,18 @@ function PostDetail({get_blog, post, get_blog_list_category, posts}) {
       </div>
 
       <div className=" w-full mt-24 absolute inset-x-0 top-[calc(100%-20rem)] -z-10 transform-gpu overflow-hidden bg-white lg:top-[calc(100%-45rem)] sm:top-[calc(100%-35rem)]">
-              <img src={post.thumbnail} className='w-full h-full object-cover opacity-25'/>
+              <img src={post.thumbnail} className='w-full h-full object-cover opacity-10'/>
             </div>
 
-                        <img className="object-cover w-full shadow-sm h-full" src={post.thumbnail}/>
+                        <img className="px-10 lg:px-24 object-cover w-full shadow-sm h-full bg-white" src={post.thumbnail}/>
 
 
                    {/*  <!--post categories--> */}
-                    <div className="mt-2">
+                    <div className="px-10 lg:px-24 pt-2 bg-white">
                          {/*    <!--author avator--> */}
                            <div className="font-light text-gray-600">
                               
-                                <a href="#" className="flex items-center mt-6 mb-6"><img
+                                <a href="#" className="flex items-center pt-6 pb-6"><img
                                         src={avatar}
                                         alt="avatar" className="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block"/>
                                     <h1 className="font-bold text-gray-700 hover:underline">By Viperpy Inc.</h1>
@@ -144,7 +147,7 @@ function PostDetail({get_blog, post, get_blog_list_category, posts}) {
                 
               {/*      <!--end post header--> */}
                         {/* <!--post content--> */}
-             <div className="max-w-full lg:px-12 lg:text-xl mx-auto text-gray-900 mt-4 rounded">
+             <div className="bg-white px-10 lg:px-24 max-w-full lg:text-xl mx-auto text-gray-900 pt-4 rounded">
 
           {/*    	<!--content body--> */}
                  <div>
