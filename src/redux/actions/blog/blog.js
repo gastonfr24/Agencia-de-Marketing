@@ -10,10 +10,10 @@ import {
     GET_SEARCH_BLOG_FAIL,
  } from "./types";
 
- import { CheckCircleIcon } from "@heroicons/react/20/solid"
- import { setAlert } from "redux/actions/alerts/alert"
-import { useDispatch } from "react-redux";
+import { REMOVE_ALERT, SET_ALERT } from "../alerts/types";
 
+// Icons
+import { TbNotesOff } from "react-icons/tb"
 
 export const get_blog_list = () => async dispatch =>{
         const config = {
@@ -137,7 +137,6 @@ export const get_blog = (slug) => async dispatch => {
             'Accept': 'application/json'
         }
     }   
-    setAlert('Se ha enviado el mail', 'text-green-500', CheckCircleIcon) 
 
     try{
         const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/detail/${slug}`, config)
@@ -148,16 +147,20 @@ export const get_blog = (slug) => async dispatch => {
                 payload : res.data
             })
         }else {
-
-            dispatch({
-                type: GET_BLOG_FAIL
-            })
-        }}catch(err){
-            
-            setAlert('Se ha enviado el mail', 'text-green-500') 
             dispatch({
                 type: GET_BLOG_FAIL,
+                type: SET_ALERT,
+                payload:{msg:'No se ha encontrado el post', alertType:'text-rose-500', icon:TbNotesOff},
             })
+            setTimeout(()=> dispatch({type: REMOVE_ALERT}), 4000);
+        }}catch(err){
+            dispatch({
+                type: GET_BLOG_FAIL,
+                type: SET_ALERT,
+                payload:{msg:'No se ha encontrado el post', alertType:'text-rose-500', icon:TbNotesOff},
+            })
+            setTimeout(()=> dispatch({type: REMOVE_ALERT}), 4000);
+            
         }
 }
 
