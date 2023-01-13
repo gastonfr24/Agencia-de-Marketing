@@ -11,11 +11,11 @@ function Header() {
             <div>
         
               <div>
-              <h1 className="text-4xl font-semibold tracking-tight pb-16  
+              <h1 className="text-4xl font-gilroy-semibold tracking-tight pb-16  
              sm:text-5xl
               ">
               Agency for <span> </span>
-              <span className="text-orange-cus">
+              <span className="text-orange-cus font-gilroy-semibold">
                   <Typewriter
                         words={['Dreamers', 'Creators', 'You!']}
                         loop={0}
@@ -33,28 +33,28 @@ function Header() {
               </h1>
 
                 <ul className="flex lg:gap-8 gap-3 pt-10">
-                  <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className=" text-lg lg:text-lg font-medium leading-8 text-black sm:text-center">
+                  <li className="font-gilroy-semibold inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
+                    <Link to='/servicios/#' className=" leading-8 text-black sm:text-center">
                     Web
                     </Link>
                   </li>
-                  <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className=" text-lg lg:text-lg font-medium leading-8 text-black sm:text-center">
+                  <li className="font-gilroy-semibold inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
+                    <Link to='/servicios/#' className=" leading-8 text-black sm:text-center">
                     Apps
                     </Link>
                   </li>
-                  <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className=" text-lg lg:text-lg font-medium leading-8 text-black sm:text-center">
+                  <li className="font-gilroy-semibold inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
+                    <Link to='/servicios/#' className=" leading-8 text-black sm:text-center">
                     Videojuegos
                     </Link>
                   </li>
-                  <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className=" text-lg lg:text-lg font-medium leading-8 textblack0 sm:text-center">
+                  <li className="font-gilroy-semibold inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
+                    <Link to='/servicios/#' className=" leading-8 textblack0 sm:text-center">
                     Marketing
                     </Link>
                   </li>
-                  <li className="inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
-                    <Link to='/servicios/#' className=" text-lg lg:text-lg font-medium leading-8 text-black sm:text-center">
+                  <li className="font-gilroy-semibold inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
+                    <Link to='/servicios/#' className=" leading-8 text-black sm:text-center">
                     Consultorías
                     </Link>
                   </li>
@@ -62,7 +62,7 @@ function Header() {
 
               </div>
               <div className="absolute inset-x-0 top-[calc(100%-20rem)] -z-10 transform-gpu blur-none overflow-hidden bg-white lg:top-[calc(100%-39rem)] sm:top-[calc(100%-35rem)]">
-              <img src={background} className='w-full h-full object-cover opacity-40'/>
+              <img src={background} className='w-full h-full object-cover opacity-30'/>
             </div>
             </div>
           </div>

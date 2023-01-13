@@ -21,11 +21,9 @@ import {
     FaFacebook,
     FaLinkedinIn,
   } from 'react-icons/fa';
+  import { BsImageAlt } from "react-icons/bs"
+import Alert from "components/alerts/alert"
 
-// Example
-import background from "assets/img/back.jpg"
-import sample1 from "assets/img/d.jpg"
-import sample2 from "assets/img/f.jpg"
 
 
 function PostDetail({get_blog, post, get_blog_list_category, posts}) {
@@ -140,7 +138,7 @@ function PostDetail({get_blog, post, get_blog_list_category, posts}) {
                                 <a href="#" className="flex items-center pt-6 pb-6"><img
                                         src={avatar}
                                         alt="avatar" className="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block"/>
-                                    <h1 className="font-bold text-gray-700 hover:underline">By Viperpy Inc.</h1>
+                                    <h1 className="font-bold text-gray-700 hover:underline">By {post.author.first_name + ' ' + post.author.last_name}</h1>
                                 </a>
                           </div>
                    </div>
@@ -161,7 +159,10 @@ function PostDetail({get_blog, post, get_blog_list_category, posts}) {
                 </div>
 
               {/*   <!--related posts--> */}
-    <h2 className="text-2xl mt-4 text-gray-500 font-bold text-center">Related Posts</h2>
+
+                <h2 className="text-2xl mt-4 text-gray-800 font-bold text-center">Related Posts</h2>
+
+
     <div className="grid h-full grid-cols-12 gap-10 pb-10 mt-8 sm:mt-16">
         
 
@@ -198,9 +199,75 @@ function PostDetail({get_blog, post, get_blog_list_category, posts}) {
       </div>
   </div>
 </div>:
-<>Loading...</>
+
+<>
+<div classNameName="pt-28">
+ 
+ <div className="mt-6">
+           <div className="">
+
+               {/*   <!--author--> */}
+              <div className="w-full pt-28">
+                 
+
+                                     {/* 	<!--post heading--> */}
+                                     <div className="lg:ml-8 px-10 lg:mx-12 lg:mb-12">
+                                     <div className="max-w-full mx-auto h-20 font-semibold grid grid-cols-12 items-center gap-4">
+                                     <div className='col-span-5 w-full lg:h-16 h-8 bg-gray-100 rounded-full'></div>
+                           <div className='col-span-2 w-full lg:h-16 h-8 bg-gray-100 rounded-full'></div>
+                             <div className='col-span-3 w-full lg:h-16 h-8 bg-gray-100 rounded-full'></div>
+                                        </div>
+                                     <div className="max-w-full mx-auto h-20 font-semibold grid grid-cols-12 items-center gap-4 lg:mt-4">
+                           <div className='col-span-2 w-full lg:h-16 h-8 bg-gray-100 rounded-full'></div>
+                             <div className='col-span-3 w-full lg:h-16 h-8 bg-gray-100 rounded-full'></div>
+                                        </div>
+
+                                        <div className='w-full h-8 lg:mt-8 grid grid-cols-12 gap-x-4 ml-4 items-center'>
+                <div className='col-span-2 w-full h-5 bg-gray-100 rounded-full'></div>
+                <div className='col-span-2 w-full h-5 bg-gray-100 rounded-full'></div>
+                <div className='col-span-2 w-full h-5 bg-gray-100 rounded-full'></div> 
+              </div>
+
+                                         </div>
+
+                           <div className=" w-full bg-white  mx-auto md:text-2xl text-gray-900 pt-10 rounded">
+
+                        {/*    	<!--content body--> */}
+                            <div className="w-full px-10 lg:mx-6 pb-2">
+                            <div className='w-full h-8 mt-8 grid grid-cols-12 gap-x-4 ml-4 items-center'>
+                <div className='col-span-6 w-full h-5 bg-gray-100 rounded-full'></div>
+                <div className='col-span-2 w-full h-5 bg-gray-100 rounded-full'></div>
+                <div className='col-span-3 w-full h-5 bg-gray-100 rounded-full'></div> 
+              </div>
+              <div className='w-full h-8 mt-8 grid grid-cols-12 gap-x-4 ml-4 items-center'>
+                <div className='col-span-8 w-full h-5 bg-gray-100 rounded-full'></div>
+                <div className='col-span-1 w-full h-5 bg-gray-100 rounded-full'></div>
+                <div className='col-span-2 w-full h-5 bg-gray-100 rounded-full'></div> 
+              </div>
+              <div className='w-full h-8 mt-8 grid grid-cols-12 gap-x-4 ml-4 items-center'>
+                <div className='col-span-2 w-full h-5 bg-gray-100 rounded-full'></div>
+                <div className='col-span-2 w-full h-5 bg-gray-100 rounded-full'></div>
+                <div className='col-span-2 w-full h-5 bg-gray-100 rounded-full'></div> 
+              </div>
+                            </div>
+                                </div>
+
+
+
+   </div>
+                  <div className=" lg:px-24 w-11/12 shadow-sm h-96 lg:ml-20 mt-6">
+                  <div className='flex items-center justify-center w-full bg-gray-100 h-full'>
+                <BsImageAlt className='text-gray-50 h-12 w-12'/>
+                </div>
+                    </div>
+
+   </div>
+</div>
+</div>
+</>
 }
         <Footer/>
+        <Alert/>
     </Layout>
   )
 }
@@ -212,5 +279,5 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps,{
     get_blog,
-    get_blog_list_category
+    get_blog_list_category,
 })(PostDetail)

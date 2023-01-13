@@ -5,16 +5,16 @@ import img from "assets/img/sample.jpg"
 function HorizontalCard({data}) {
   return (
     <li 
-    className="bg-white max-w-5xl rounded-lg hover:drop-shadow-2xl transition duration-300 ease-in-out"
+    className="bg-white sm:max-w-5xl w-full rounded-lg hover:drop-shadow-2xl transition duration-300 ease-in-out pr-4"
         >
             <Link to={`/blog/${data.slug}`}
             className="group block relative">
               <div className="flex items-cente my-10">
                 <div className="lg:flex min-w-0 lg:flex-1 items-center overflow-hidden rounded-lg ">
                   <figure className="lg:flex-shrink-0">
-                    <img className="rounded-lg h-60 lg:w-80 w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out" src={data.thumbnail} alt="" />
+                    <img className=" rounded-lg h-60 lg:w-80 w-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out" src={data.thumbnail} alt="" />
                   </figure>
-                  <div className="min-w-0 flex-1 px-8 mb-40 ">
+                  <div className="min-w-0 flex-1 px-8 sm:mb-40 mb-6">
                     <p  className="pt-4 lg:mt-0 lg:top-4 leading-10 text-3xl pb-4 xl:pb-0 font-semibold transition duration-300 ease-in-out group-hover:text-orange-cus">{data.title.length > 80 ? data.title.slice(0,79):data.title}</p>
                     <div className="lg:absolute">
                         <span className="mx-1 font-medium text-gray-800 text-sm"><Link to={`/category/${data.category.slug}`}>{data.category.name}</Link></span> <span className="text-gray-300">&middot;</span> 

@@ -99,39 +99,39 @@ function Navbar() {
         <div className="px-2 -ml-4 hidden lg:flex -mt-2 flex-wrap items-center justify-between sm:flex-nowrap">
           <Link to='/' className="ml-6 mt-1 pb-3">
 
-            <img src={logo} width={55} height={55} className=""/>
+            <img src={logo} width={55} height={55} className="ml-0.5"/>
             <h2 className="absolute font-bold text-sm uppercase text-orange-cus">Viperpy</h2>
           </Link>
           <div className=" ml-4 flex-shrink-0">
-          <NavLink to="/casos" className="text-base mx-4 inline-flex font-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
+          <NavLink to="/casos" className="text-base mx-4 inline-flex font-gilroy-bold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
               Casos
             </NavLink>
-            <NavLink to="/servicios" className="text-base mx-4 inline-flex font-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
+            <NavLink to="/servicios" className="text-base mx-4 inline-flex font-gilroy-bold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
               Servicios
             </NavLink>
-            <NavLink to="/nosotros" className="text-base mx-4 inline-flex font-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
+            <NavLink to="/nosotros" className="text-base mx-4 inline-flex font-gilroy-bold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
               Nosotros
             </NavLink>
-            <NavLink to="/carreras" className="text-base mx-4 inline-flex font-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
+            <NavLink to="/carreras" className="text-base mx-4 inline-flex font-gilroy-bold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
               Carreras
             </NavLink>
-            <NavLink to="/blog" className="text-base mx-4 inline-flex font-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
+            <NavLink to="/blog" className="text-base mx-4 inline-flex font-gilroy-bold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
               Blog
             </NavLink>
-            <NavLink to="/contacto" className=" text-base mx-3 ml-4 inline-flex font-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
+            <NavLink to="/contacto" className=" text-base mx-3 ml-4 inline-flex font-gilroy-bold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
               Contacto
             </NavLink>
 
             <Link
         t0="/contacto"
-        className="inline-flex items-center rounded-sm border border-transparent bg-orange-cus px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-black transition duration-300 ease-in-out ml-6 focus:outline-none focus:ring-2 focus:ring-orange-cus focus:ring-offset-2"
+        className="inline-flex items-center rounded-[4px] border border-transparent bg-orange-cus px-[20px] pb-1 pt-1.5  text-base font-gilroy-medium text-white shadow-sm hover:bg-black transition duration-300 ease-in-out ml-6 focus:outline-none focus:ring-2 focus:ring-orange-cus focus:ring-offset-2"
       >
         Hire us
         <DotLoader
         className="ml-3 -mr-1 h-5 w-5"
             loading={loading}
             color="#f2f2f2"
-            size={20}
+            size={16}
             />
       </Link>
             

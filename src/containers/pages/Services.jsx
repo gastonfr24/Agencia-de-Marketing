@@ -148,7 +148,7 @@ function Services() {
      <meta name="publisher" content="Viperpy" />
       </Helmet>
       <Navbar/>
-      <div className="pt-28">
+      <div className="pt-20">
       <Header/>
 
       <div className="py-12 bg-gray-50">

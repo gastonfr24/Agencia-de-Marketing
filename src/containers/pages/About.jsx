@@ -31,10 +31,10 @@ function About() {
      <meta name="publisher" content="Viperpy" />
       </Helmet>
       <Navbar/>
-      <div className="pt-28">
+      <div className="pt-20">
       <Header/>
       <TestStats/>
-      <Images/>
+     {/*  <Images/> */}
       <LogoCloud/>
       <Feature/>
       <Team/>

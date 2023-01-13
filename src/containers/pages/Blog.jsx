@@ -11,6 +11,7 @@ import { get_blog_list } from "redux/actions/blog/blog";
 import { get_blog_list_page } from "redux/actions/blog/blog";
 import CategoriesHeader from "components/blog/CategoriesHeader";
 import BlogList from "components/blog/BlogList";
+import SqueletonCard from "components/blog/loaders/SqueletonCard";
 
 function Blog({
   get_categories,
@@ -19,8 +20,6 @@ function Blog({
   categories,
   posts,
   count,
-  next,
-  previous,
 }) {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -51,7 +50,20 @@ function Blog({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* We've used 3xl here, but feel free to try other max-widths based on your needs */}
                 <div className="mx-auto max-w-6xl my-10">
-            <BlogList posts={posts&&posts} get_blog_list_page={get_blog_list_page} count={count}/>
+                  {
+                    posts ? 
+                    <>
+                    <BlogList posts={posts&&posts} get_blog_list_page={get_blog_list_page} count={count}/>
+                    </>
+                    :
+                    <div className="overflow-hidden px-8">
+                    <ul role="list" className="">
+                      <SqueletonCard/>
+                      <SqueletonCard/>
+                      <SqueletonCard/>
+                    </ul>
+                  </div>
+                  }
           </div>
         </div>
       </div>

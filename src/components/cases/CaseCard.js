@@ -8,11 +8,11 @@ function CaseCard({data}) {
     </div>
     <div className="flex flex-1 flex-col justify-between bg-white sm:p-6">
       <div className="flex-1">
-        <p className="text-xl font-medium text-gray-800">
+        {/* <p className="text-xl font-medium text-gray-800">
           <a href={data.category.href} className="hover:underline sm:block hidden">
             {data.category.name}
           </a>
-        </p>
+        </p> */}
         <a href={data.href} className="sm:mt-2 block">
           <p className="sm:text-4xl pt-4 sm:pb-6 pb-2 text-xl font-semibold text-gray-900 group-hover:text-orange-cus transition duration-500 ease-in-out">{data.title}</p>
           <p className="sm:mt-3 sm:text-lg text-sm space-y-2 leading-9 text-gray-500">{data.description}</p>

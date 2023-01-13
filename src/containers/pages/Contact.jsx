@@ -1,21 +1,27 @@
 import Footer from "components/navigation/Footer"
 import Navbar from "components/navigation/Navbar"
 import Layout from "hocs/layouts/Layout"
-import { useEffect } from "react"
+import React, { useEffect } from "react"
 import {Helmet} from "react-helmet-async"
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 import { Switch } from '@headlessui/react'
 import { Link } from "react-router-dom"
 import axios from "axios"
-import { BounceLoader, PulseLoader } from "react-spinners"
+import { PulseLoader } from "react-spinners"
 
+import 'animate.css/animate.min.css';
+import { MdSpeakerNotesOff } from "react-icons/md"
+import { setAlert } from "redux/actions/alerts/alert"
+import { connect } from "react-redux"
+import Alert from "components/alerts/alert"
+import { CheckCircleIcon } from "@heroicons/react/20/solid"
+import { FaHandshake } from "react-icons/fa"
 
-function Contact() {
+function Contact({setAlert}) {
   useEffect(() => {
     window.scrollTo(0,0)
   }, [])
-
   const [enabled, setEnabled] = useState(false)
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
@@ -26,6 +32,7 @@ function Contact() {
     phone: '',
     budget: '',
   })
+
 
   const {
     name,
@@ -44,7 +51,6 @@ budget
     e.preventDefault()
     if(enabled){
       setLoading(true)
-
       const config ={
         header:{
           'Content-Type' : 'application/json'
@@ -60,20 +66,24 @@ budget
       formData.append('budget', budget)
 
       const fetchData = async() =>{
+        try{
         const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/contact/`, formData, config)
+        
       if(res.status === 200){
         setLoading(false)
-        setFormData({
+        setAlert('Se ha enviado el mail', 'text-green-500', CheckCircleIcon) 
+         setFormData({
           name: '',
           email: '',
           subject: '',
           message: '',
           phone: '',
           budget: '',
-        })
-        alert('mensaje enviado')
+        }) 
+       
       }else{
         setLoading(false)
+         setAlert('No se ha podido enviar el mail', 'text-rose-500', MdSpeakerNotesOff) 
         // setFormData({
         //   name: '',
         //   email: '',
@@ -84,13 +94,27 @@ budget
         // })
         alert('no se ha podido enviar')
       }
+      }catch{
+        setLoading(false)
+        setAlert('No se ha podido enviar el mail', 'text-rose-500', MdSpeakerNotesOff) 
+       // setFormData({
+       //   name: '',
+       //   email: '',
+       //   subject: '',
+       //   message: '',
+       //   phone: '',
+       //   budget: '',
+       // })
+      }
       }
       fetchData()
     }else{
-      alert('Acepta los terminos de servicio y politicas de privacidad')
+      setAlert('Acepta los términos y políticas para continuar', 'text-blue-400', FaHandshake) 
     }
   }
 
+  
+  
   return (
     <Layout>
                   <Helmet>
@@ -106,6 +130,18 @@ budget
      <meta name="publisher" content="Viperpy" />
       </Helmet>
       <Navbar/>
+      {/* Alerts */}
+      {loading ?
+      <div className="fixed left-0 bottom-4 z-10 w-72 animate__animated animate__bounceInUp">
+      <div className=" mx-4 pb-0.5 bg-white rounded-lg drop-shadow-xl">
+      <h1 className=" pt-2 px-10 -mb-3 text-orange-cus">Enviando email</h1>
+      <div className=" loader-line"/>
+      </div>
+    </div>
+      :
+      <></>
+      }
+
       <div className="pt-28">
       <div className="relative bg-white">
       <div className="absolute inset-0">
@@ -165,6 +201,7 @@ budget
                   onChange={e=>onChange(e)}
                   className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                   placeholder="Full name"
+                  required
                 />
               </div>
               <div>
@@ -179,6 +216,7 @@ budget
                   onChange={e=>onChange(e)}
                   className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                   placeholder="Email"
+                  required
                 />
               </div>
 
@@ -214,6 +252,7 @@ budget
                   onChange={e=>onChange(e)}
                   className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                   placeholder="Subject"
+                  required
                 />
               </div>
 
@@ -227,6 +266,7 @@ budget
                   rows={4}
                   value={message}
                   onChange={e=>onChange(e)}
+                  required
                   className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                   placeholder="Message"
                   defaultValue={''}
@@ -243,7 +283,7 @@ budget
                     value={budget}
                     className="mt-1 block w-full pl-3 pr-10 texte-base gorder border-gray-300"
                     ><option value="" disabled className="text-gray-200">Presupuesto (opcional)</option>
-                      <option value="0-100,000">0-50.000 ARS</option>
+                      <option value="0-100,000">0-100,000 ARS</option>
                       <option value="100,000-250,000">100,000-250,000 ARS</option>
                       <option value="250,000+">250,000+ ARS</option>
                     </select>
@@ -308,9 +348,15 @@ budget
       </div>
     </div>
       </div>
+      <Alert/>
       <Footer/>
     </Layout>
   )
 }
+const mapStateToProps = (state) => ({
+  
+});
 
-export default Contact
+export default connect(mapStateToProps, {
+  setAlert
+})(Contact);

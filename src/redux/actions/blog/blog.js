@@ -10,6 +10,10 @@ import {
     GET_SEARCH_BLOG_FAIL,
  } from "./types";
 
+ import { CheckCircleIcon } from "@heroicons/react/20/solid"
+ import { setAlert } from "redux/actions/alerts/alert"
+import { useDispatch } from "react-redux";
+
 
 export const get_blog_list = () => async dispatch =>{
         const config = {
@@ -132,7 +136,8 @@ export const get_blog = (slug) => async dispatch => {
         headers:{
             'Accept': 'application/json'
         }
-    }
+    }   
+    setAlert('Se ha enviado el mail', 'text-green-500', CheckCircleIcon) 
 
     try{
         const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/detail/${slug}`, config)
@@ -143,12 +148,15 @@ export const get_blog = (slug) => async dispatch => {
                 payload : res.data
             })
         }else {
+
             dispatch({
                 type: GET_BLOG_FAIL
             })
         }}catch(err){
+            
+            setAlert('Se ha enviado el mail', 'text-green-500') 
             dispatch({
-                type: GET_BLOG_FAIL
+                type: GET_BLOG_FAIL,
             })
         }
 }

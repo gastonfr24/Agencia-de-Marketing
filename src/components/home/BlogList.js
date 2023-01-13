@@ -23,7 +23,7 @@ import d from "assets/img/d.jpg"
         <div className="mx-8 lg:mx-auto lg:max-w-7xl py-24 sm:py-32 lg:px-4 ">
           <div className="mx-auto max-w-2xl lg:max-w-none"></div>
                     <div className="max-w-5xl mb-8">
-              <h2 className="lg:text-5xl text-2xl font-semibold tracking-wide text-gray-900 leading-tight">
+              <h2 className="lg:text-5xl text-2xl font-gilroy-semibold tracking-wide text-gray-900 leading-tight">
               Nuestas prácticas y conocimientos
               </h2>
 

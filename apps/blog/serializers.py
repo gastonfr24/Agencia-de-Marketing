@@ -1,9 +1,11 @@
 from rest_framework import serializers
 from .models import *
 from apps.category.serializers import CategorySerializer
+from apps.user.serializers import UserSerializer
 
 class PostSerializer(serializers.ModelSerializer):
     category = CategorySerializer()
+    author = UserSerializer()
     class Meta:
         model = Post
         fields = [
@@ -17,7 +19,8 @@ class PostSerializer(serializers.ModelSerializer):
             'published',
             'views',
             'category',
-            'status'
+            'status',
+            'author'
         ]
 class PostListSerializer(serializers.ModelSerializer):
     category = CategorySerializer()
