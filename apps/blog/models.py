@@ -51,6 +51,7 @@ class Post(models.Model):
 class ViewCount(models.Model):
     post = models.ForeignKey(Post, related_name='blogpost_view_count', on_delete=models.CASCADE)
     ip_address = models.CharField(max_length=255)
+    created = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f'{self.ip_adress}'
+        return f'{self.ip_address}'
