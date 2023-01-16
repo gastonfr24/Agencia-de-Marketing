@@ -6,7 +6,7 @@ function ServiceCard({post}) {
     <div className='group w-full relative p-8 h-96 lg:h[150pm] bg-white shadow-lg hover:shadow-2xl hover:-translate-y-1 transition duration-300 ease-in-out'>
         <div className='w-full'>
             <div className="">
-            <post.icon className='text-6xl text-gray-500'/>
+            <post.icon className='text-6xl text-teal-500'/>
             <h2 className="text-xl font-semibold text-gray-900 pt-8">
                 {post.title}
             </h2>

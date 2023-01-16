@@ -45,7 +45,7 @@ function Header() {
                   </li>
                   <li className="font-gilroy-semibold inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">
                     <Link to='/servicios/#' className=" leading-8 text-black sm:text-center">
-                    Videojuegos
+                    Machine Learning
                     </Link>
                   </li>
                   <li className="font-gilroy-semibold inline-flex border-b-2 border-transparent hover:border-orange-cus transition duration-500 ease-in-out">

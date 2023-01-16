@@ -39,7 +39,7 @@ import d from "assets/img/d.jpg"
                    <div key={index} className="rounded-xl group flex-col items-start overflow-hidden shadow-sm  hover:scale-95 transition-transform duration-1000">
 
                     <a href="#_" className="block transition duration-1000 ease-out transform group-hover:scale-125">
-                        <img className="object-cover w-full shadow-sm h-full" src={post_cat.thumbail}/>
+                        <img className="object-cover w-full shadow-sm h-full" src={post_cat.thumbnail}/>
                     </a>
 
 

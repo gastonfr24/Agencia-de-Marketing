@@ -1,25 +1,30 @@
+import { AiOutlineFieldTime } from "react-icons/ai"
+import { RiPencilRuler2Line } from "react-icons/ri"
+import { BiSupport } from "react-icons/bi"
+import { IoExtensionPuzzleOutline } from "react-icons/io5"
+
 const incentives = [
   {
-    name: 'Equipo ágil de programadores Python',
-    imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-shipping-simple.svg',
-    description: "As we started from design many years ago, we are ranked on Dribbble as 1 of the 10 best design studios around the world. We care about the design and front-end face of the project. As a digital product development agency, we believe in beautiful software",
+    name: 'Desarrollo ágil y escalable',
+    imageSrc: AiOutlineFieldTime,
+    description: "Nuestros programadores python trabajan de forma ágil para asegurar que tus proyectos se entreguen en plazo y cumplan tus expectativas",
   },
   {
-    name: 'Equipo ágil de programadores JS',
-    imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-warranty-simple.svg',
-    description: "Our digital product company's multifunctional team brings together designers, software developers, QA experts, and illustrators. Applying our multifaceted team's skillset, we will help you overcome the trickiest challenges during the exciting product development journey",
+    name: 'Diseño personalizado',
+    imageSrc: RiPencilRuler2Line,
+    description: "Diseñadores de alta calidad, que trabajan para crear un diseño único y atractivo para tu página web",
   },
   {
-    name: 'Diseñadores de la mejor calidad que trabajan junto con el equipo de desarrollo.',
-    imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg',
+    name: 'Soporte técnico contínuo',
+    imageSrc: BiSupport,
     description:
-      "We thrive in a situation when we have to start our work ASAP - implemented agile methodologies (Scrum, Kanban) plus processes and tools that we have in place allow us for smooth and painless completion of any project",
+      "Ofrecemos soporte técnico continuo para ayudarte a mantener tu página web funcionando de manera óptima",
   },
   {
-    name: 'Diseñadores de la mejor calidad que trabajan junto con el equipo de desarrollo.',
-    imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg',
+    name: 'Soluciones a medida',
+    imageSrc: IoExtensionPuzzleOutline,
     description:
-      "We thrive in a situation when we have to start our work ASAP - implemented agile methodologies (Scrum, Kanban) plus processes and tools that we have in place allow us for smooth and painless completion of any project",
+      "Entendemos que cada negocio es único, por eso ofrecemos soluciones a medida para adaptarnos a las necesidades específicas de cada cliente",
   },
 ]
 
@@ -32,18 +37,20 @@ export default function Incentives() {
             <h2 className="lg:text-[40px] text-3xl font-gilroy-semibold tracking-wide text-gray-900 leading-tight">
             ¿Por qué elegir la agencia de productos digitales Viperpy?
             </h2>
-            <p className="xl:col-span-2 mt-8 text-gray-800 leading-7 font-gilroy-medium w-9/12">
-              Fireart Studio is a boutique design and software development studio.
-              We have 50+ JS and design experts on board and 6+ years of experience
-                in building digital 
-              projects from scratch or refreshing existing ones.
+            <p className="xl:col-span-2 mt-8 text-gray-800 leading-7 font-gilroy-medium w-9/12 text-center lg:text-left mx-auto">
+            Al elegir a Viperpy, podrás contar con un equipo dedicado y profesional 
+            que te ayudará a crear una página web que se adapte a tus necesidades
+             y te ayude a alcanzar tus objetivos de negocio. <div className="mt-2">
+            No importa si estás buscando una página web para promocionar tus productos o servicios,
+             o si deseas crear una plataforma en línea para tu negocio,
+             Viperpy tiene la experiencia y los conocimientos necesarios para ayudarte a lograrlo.</div>
             </p>
           </div>
           <div className="mt-24 grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-2  lg:w-8/12 mx-2">
             {incentives.map((incentive) => (
               <div key={incentive.name} className="sm:flex lg:block mr-20">
                 <div className="sm:flex-shrink-0">
-                  <img className="h-16 w-16" src={incentive.imageSrc} alt="" />
+                  <incentive.imageSrc className="h-16 w-16 text-orange-400" />
                 </div>
                 <div className="mt-4 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
                   <h3 className="text-2xl leading-tight font-gilroy-bold text-gray-900 my-4">{incentive.name}</h3>

@@ -34,11 +34,11 @@ function About() {
       <div className="pt-20">
       <Header/>
       <TestStats/>
+     {/*  <LogoCloud/> */}
      {/*  <Images/> */}
-      <LogoCloud/>
-      <Feature/>
-      <Team/>
-      <CTA/>
+ {/*      <Feature/> */}
+      {/* <CTA/> */}
+      {/* <Team/> */}
       </div>
       <Footer/>
     </Layout>

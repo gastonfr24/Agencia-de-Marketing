@@ -12,16 +12,15 @@ function Header() {
         
               <div className="w-1/2">
                 <h1 className="text-4xl pb-16 font-gilroy-semibold tracking-tight sm:text-5xl">
-                 Casos de Estudio
+                 Proyectos
                 </h1>
 
-                <p className="mt-2 text-xl leading-8 text-black font-gilroy-medium">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt
-                  amet fugiat veniam occaecat fugiat aliqua.
+                <p className="mt-2 text-xl leading-8 text-gray-800 font-gilroy-medium">
+                Echa un vistazo a algunos de los proyectos que hemos realizado en Viperpy. Aquí encontrarás una amplia variedad de proyectos que van desde páginas web para pequeñas empresas hasta soluciones en línea personalizadas para grandes corporaciones.
                 </p>
 
               </div>
-              <div className="absolute inset-x-0 top-[calc(100%-20rem)] -z-10 transform-gpu blur-none overflow-hidden bg-white lg:top-[calc(100%-39rem)] sm:top-[calc(100%-30rem)]">
+              <div className="absolute inset-x-0 top-[calc(100%-20rem)] -z-10 transform-gpu blur-none overflow-hidden bg-white lg:top-[calc(100%-42rem)] sm:top-[calc(100%-30rem)]">
               <img src={background} className='w-full h-full object-cover opacity-30'/>
             </div>
             </div>

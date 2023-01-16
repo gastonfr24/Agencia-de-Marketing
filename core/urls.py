@@ -10,9 +10,12 @@ urlpatterns = [
     path('auth/', include('djoser.social.urls')),
 
     path('admin/', admin.site.urls),
+
     path('api/blog/', include('apps.blog.urls')),
     path('api/contact/', include('apps.contact.urls')),
     path('api/category/', include('apps.category.urls')),
+    path('api/dashboard/', include('apps.dashboard.urls')),
+
     path('ckeditor/', include('ckeditor_uploader.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

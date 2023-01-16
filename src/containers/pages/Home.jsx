@@ -27,7 +27,7 @@ function Home() {
       <CasesList/>
       <Features/>
       <CTA/>
-      <LogoCloud/>
+      {/* <LogoCloud/> */}
       <BlogList/>
       </div>
       <Footer/>

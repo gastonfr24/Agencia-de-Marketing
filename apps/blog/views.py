@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .serializers import PostSerializer, PostListSerializer
 from .permissions import IsPostAuthorOrReadOnly, AuthorPermission
+from django.utils import timezone
 
 # Django Rest Framework
 from rest_framework.views import APIView
@@ -8,13 +9,14 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
 from rest_framework.parsers import MultiPartParser, FormParser 
+import requests
 
 
 # Busqueda
 from django.db.models.query_utils import Q
 
 # Modelos
-from .models import Post, ViewCount
+from .models import Post, ViewCount, AllVisitCount
 from apps.category.models import Category
 
 # Paginación
@@ -76,25 +78,40 @@ class ListPostByCategoryView(APIView):
 
 class PostDetailView(APIView):
     permissions_classes = (permissions.AllowAny,)
-    def get(self, requst, slug, format=None):
+    def get(self, request, slug, format=None):
         
         if Post.postobjects.filter(slug=slug).exists():
 
             post = Post.postobjects.get(slug=slug)
-            serialiser = PostSerializer(post)
+            serializer = PostSerializer(post)
 
-            address = requst.META.get('HTTP_X_FOWARDED_FOR')
+            address = request.META.get('HTTP_X_FOWARDED_FOR')
             if address:
                 ip = address.split(',')[-1].strip()
             else:
-                ip = requst.META.get('REMOTE_ADDR')
+                ip = request.META.get('REMOTE_ADDR')
             
-            if not ViewCount.objects.filter(post=post, ip_address=ip):
-                view = ViewCount(post=post, ip_address=ip)
+            all_visits = AllVisitCount(ip_address=ip)
+            all_visits.save()
+
+            
+            if not ViewCount.objects.filter(post=post, ip_address__ip_address=all_visits.ip_address):
+                view = ViewCount(post=post, ip_address=all_visits, count= 1)
+                try:
+                    r = requests.get('https://freegeoip.app/json/8.8.8.8')
+                    data = r.json()
+                    view.country = data["country_name"]
+                except:
+                    pass
                 view.save()
                 post.views += 1
                 post.save()
-            return Response({'post':serialiser.data}, status = status.HTTP_200_OK)
+            else:
+                view = ViewCount.objects.get(post=post, ip_address__ip_address=all_visits.ip_address)
+                view.count += 1
+                view.save()
+
+            return Response({'post':serializer.data}, status = status.HTTP_200_OK)
         else:
             return Response({'error':'no post found'}, status = status.HTTP_404_NOT_FOUND)
 
@@ -123,18 +140,21 @@ class AuthorBlogListView(APIView):
 
     def get(self, request, format=None):
 
-        user = self.request.user
+        if self.request.user.is_authenticated:
+            user = self.request.user
 
-        if Post.objects.filter(author=user).exists():
-            
-            posts = Post.objects.filter(author=user)
-            paginatior = SmallSetPagination()
-            results = paginatior.paginate_queryset(posts, request)
-            serializer = PostListSerializer(results, many=True)
+            if Post.objects.filter(author=user).exists():
+                
+                posts = Post.objects.filter(author=user)
+                paginatior = SmallSetPagination()
+                results = paginatior.paginate_queryset(posts, request)
+                serializer = PostListSerializer(results, many=True)
 
-            return paginatior.get_paginated_response({'posts':serializer.data})
+                return paginatior.get_paginated_response({'posts':serializer.data})
+            else:
+                return Response({'error':'no posts found'}, status = status.HTTP_404_NOT_FOUND)
         else:
-            return Response({'error':'no posts found'}, status = status.HTTP_404_NOT_FOUND)
+            return Response({'error':'no authenticated'}, status = status.HTTP_404_NOT_FOUND)
 
 
 class UpdateBlogPostView(APIView):
@@ -146,7 +166,7 @@ class UpdateBlogPostView(APIView):
         user = self.request.user
         data = self.request.data
 
-        post = Post .objects.get(slug=data['slug'])
+        post = Post.objects.get(slug=data['slug'])
 
         if data['title']:        
             if not data['title'] == 'undefined':
@@ -181,7 +201,7 @@ class UpdateBlogPostView(APIView):
         post.save()
 
 
-        return Response({'succes':'Post edited'})
+        return Response({'success':'Post edited'})
 
 
 class DraftBlogPostView(APIView):
@@ -233,7 +253,7 @@ class PostAuthorDetailView(APIView):
             else:
                 ip = requst.META.get('REMOTE_ADDR')
             
-            if not ViewCount.objects.filter(post=post, ip_address=ip):
+            if not ViewCount.objects.filter(post=post, ip_address__ip_address=ip):
                 view = ViewCount(post=post, ip_address=ip)
                 view.save()
                 post.views += 1

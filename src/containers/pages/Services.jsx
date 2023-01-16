@@ -8,64 +8,64 @@ import {Helmet} from "react-helmet-async"
 
 // Icons
 import {BiCodeBlock} from 'react-icons/bi'
+import { RiPencilRuler2Line } from "react-icons/ri"
+import { BiSupport } from "react-icons/bi"
+import { IoExtensionPuzzleOutline } from "react-icons/io5"
+import { BsGraphUp } from "react-icons/bs"
 
 const posts_software = [
   {
-    title: 'Javascript Developers',
-    icon: BiCodeBlock,
+    title: 'Diseño web personalizados',
+    icon: RiPencilRuler2Line,
     href: '/servicios/javascript',
     category: { name: 'Development', href: '#' },
     description:
-      'Talented and agile javascript developers for your project, available 24/7.',
+      'Nuestro equipo de diseñadores creativos trabaja para crear un diseño web único y atractivo que refleje la personalidad de tu negocio y atraiga a tus clientes potenciales.',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
     imageUrl:
       'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
     readingTime: '6 min',
-    author: {
-      name: 'Roel Aufderehar',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
   },
   {
-    title: 'How to use search engine optimization to drive sales',
+    title: 'Desarrollo web escalable',
     href: '#',
-    icon: BiCodeBlock,
+    icon: IoExtensionPuzzleOutline,
     category: { name: 'Video', href: '#' },
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
+      ' Utilizamos las últimas tecnologías de Django y React para crear soluciones web escalables que se adapten a las necesidades crecientes de tu negocio.',
     date: 'Mar 10, 2020',
     datetime: '2020-03-10',
     imageUrl:
       'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
     readingTime: '4 min',
-    author: {
-      name: 'Brenna Goyette',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
   },
   {
-    title: 'Improve your customer experience',
+    title: 'Soporte técnico continuo',
     href: '#',
-    icon: BiCodeBlock,
+    icon: BiSupport,
     category: { name: 'Case Study', href: '#' },
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+      'Ofrecemos soporte técnico continuo para ayudarte a mantener tu sitio web funcionando de manera óptima y resolver cualquier problema técnico que pueda surgir.',
     date: 'Feb 12, 2020',
     datetime: '2020-02-12',
     imageUrl:
       'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
     readingTime: '11 min',
-    author: {
-      name: 'Daniela Metz',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+  },
+  {
+    title: 'Marketing digital',
+    href: '#',
+    icon: BsGraphUp,
+    category: { name: 'Case Study', href: '#' },
+    description:
+      'Maximizamos tu presencia en línea con estrategias de marketing digital, desde SEO hasta publicidad en redes sociales, para ayudar a tu negocio a alcanzar más clientes potenciales.',
+    date: 'Feb 12, 2020',
+    datetime: '2020-02-12',
+    imageUrl:
+      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+    readingTime: '11 min',
+
   },
 ]
 const posts_design = [
@@ -151,11 +151,11 @@ function Services() {
       <div className="pt-20">
       <Header/>
 
-      <div className="py-12 bg-gray-50">
+      <div className="bg-gray-50">
 
       </div>
       <ServicesList posts={posts_software} section_title='Software and Product Development'/>
-      <ServicesList posts={posts_design} section_title='Design Services'/>
+      {/* <ServicesList posts={posts_design} section_title='Design Services'/> */}
       </div>
       <Footer/>
     </Layout>

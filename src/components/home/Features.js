@@ -1,47 +1,23 @@
-import { CheckIcon } from '@heroicons/react/24/outline'
 
-const features = [
-  {
-    name: 'Invite team members',
-    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
-  },
-  { name: 'List view', description: 'You can manage phone, email and chat conversations all from a single mailbox.' },
-  {
-    name: 'Keyboard shortcuts',
-    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
-  },
-  { name: 'Calendars', description: 'You can manage phone, email and chat conversations all from a single mailbox.' },
-  { name: 'Notifications', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
-  { name: 'Boards', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
-  { name: 'Reporting', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
-  { name: 'Mobile app', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
-]
 
 export default function Features() {
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
-        <div>
-          <h2 className="text-lg font-semibold text-indigo-600">Everything you need</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900">All-in-one platform</p>
-          <p className="mt-4 text-lg text-gray-500">
-            Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.
-          </p>
-        </div>
-        <div className="mt-12 lg:col-span-2 lg:mt-0">
-          <dl className="space-y-10 sm:grid sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-4 sm:gap-x-6 sm:gap-y-10 sm:space-y-0 lg:gap-x-8">
-            {features.map((feature) => (
-              <div key={feature.name} className="relative">
-                <dt>
-                  <CheckIcon className="absolute h-6 w-6 text-green-500" aria-hidden="true" />
-                  <p className="ml-9 text-lg font-medium leading-6 text-gray-900">{feature.name}</p>
-                </dt>
-                <dd className="mt-2 ml-9 text-base text-gray-500">{feature.description}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </div>
+    <div class="header py-4 w-full mx-auto mt-10">
+    <h1 class="text-xl md:text-4xl text-center text-orange-cus w-7xl md:mx-20 mx-10  font-gilroy-semibold">Viperpy: Desarrollo web profesional para potenciar tu negocio</h1>
+    <p class="w-7xl md:mx-20 mx-10 text-gray-600 font-gilroy-semibold mt-20 text-sm md:text-xl text-center">
+      <div className="my-12">
+    Somos una agencia de desarrollo web especializada en Django y React, dedicada a ayudar a los negocios a tener una presencia en línea sólida y escalable.
     </div>
+     <div className="my-12">
+Con nuestro equipo de desarrolladores profesionales y diseñadores creativos, ofrecemos servicios de desarrollo web de alta calidad para adaptarnos a las necesidades específicas de cada cliente. Ya sea que estés buscando una página web para promocionar tus productos o servicios, o si deseas crear una plataforma en línea para tu negocio, Viperpy tiene la experiencia y los conocimientos necesarios para ayudarte a lograrlo.
+</div>
+ <div className="my-12">
+Además, ofrecemos soporte técnico continuo para ayudarte a mantener tu página web funcionando de manera óptima, y nos aseguramos de que tu página web cumpla con las últimas normas de seguridad y cumplimiento.
+</div>
+ <div className="my-12">
+No esperes más y contacta con nosotros hoy mismo para obtener más información y una cotización. Juntos podemos potenciar tu negocio y llevarlo al siguiente nivel con una presencia en línea impresionante.
+   </div>
+    </p>
+  </div>
   )
 }

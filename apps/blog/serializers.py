@@ -22,6 +22,7 @@ class PostSerializer(serializers.ModelSerializer):
             'status',
             'author'
         ]
+
 class PostListSerializer(serializers.ModelSerializer):
     category = CategorySerializer()
     class Meta:
@@ -36,6 +37,21 @@ class PostListSerializer(serializers.ModelSerializer):
             #'content'
             'time_read',
             'published',
+            'views',
+            'category',
+            'status'
+        ]
+
+
+class PostDashSerializer(serializers.ModelSerializer):
+    category = serializers.SlugRelatedField(queryset=Category.objects.all(), slug_field='slug')
+    class Meta:
+        model = Post
+        fields = [
+            'id',
+            'title',
+            'thumbnail',
+            'slug',
             'views',
             'category',
             'status'

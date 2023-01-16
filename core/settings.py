@@ -37,6 +37,7 @@ PROJECT_APPS = [
     'apps.category',
     'apps.user',
     'apps.contact',
+    'apps.dashboard'
 ]
 
 THIRD_PARTY_APPS = [

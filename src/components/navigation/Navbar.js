@@ -8,11 +8,15 @@ import { DotLoader } from "react-spinners";
 
 // Icons
 import {AiOutlineMenu} from "react-icons/ai"
+import { FaWrench } from "react-icons/fa"
 import {ImCross} from "react-icons/im"
+import { HiUserGroup } from "react-icons/hi"
+import { MdEmail } from "react-icons/md"
+import { BsBriefcaseFill } from "react-icons/bs"
+import { FaBookOpen } from "react-icons/fa"
 
 // Headles UI
 import { Popover, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Fragment } from 'react'
 
 
@@ -29,40 +33,40 @@ import { Fragment } from 'react'
 
 const solutions = [
   {
-    name: 'Casos',
+    name: 'Proyectos',
     description: 'Measure actions your users take',
     href: '/casos',
-    icon: AiOutlineMenu,
+    icon: BsBriefcaseFill,
   },
   {
     name: 'Servicios',
     description: 'Create your own targeted content',
     href: '/servicios',
-    icon: AiOutlineMenu,
+    icon: FaWrench,
   },
   {
     name: 'Nosotros',
     description: 'Keep track of your growth',
     href: '/nosotros',
-    icon: AiOutlineMenu,
+    icon: HiUserGroup,
   },
-  {
+/*   {
     name: 'Carreras',
     description: 'Keep track of your growth',
     href: '/carreras',
     icon: AiOutlineMenu,
-  },
+  }, */
   {
     name: 'Blog',
     description: 'Keep track of your growth',
     href: '/blog',
-    icon: AiOutlineMenu,
+    icon: FaBookOpen,
   },
   {
     name: 'Contacto',
     description: 'Keep track of your growth',
     href: '/contacto',
-    icon: AiOutlineMenu,
+    icon: MdEmail,
   },
 ]
 
@@ -104,7 +108,7 @@ function Navbar() {
           </Link>
           <div className=" ml-4 flex-shrink-0">
           <NavLink to="/casos" className="text-base mx-4 inline-flex font-gilroy-bold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
-              Casos
+              Proyectos
             </NavLink>
             <NavLink to="/servicios" className="text-base mx-4 inline-flex font-gilroy-bold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
               Servicios
@@ -112,9 +116,9 @@ function Navbar() {
             <NavLink to="/nosotros" className="text-base mx-4 inline-flex font-gilroy-bold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
               Nosotros
             </NavLink>
-            <NavLink to="/carreras" className="text-base mx-4 inline-flex font-gilroy-bold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
+{/*             <NavLink to="/carreras" className="text-base mx-4 inline-flex font-gilroy-bold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
               Carreras
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/blog" className="text-base mx-4 inline-flex font-gilroy-bold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out">
               Blog
             </NavLink>

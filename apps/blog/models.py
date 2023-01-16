@@ -48,10 +48,22 @@ class Post(models.Model):
         views = ViewCount.objects.filter(post=self)
         return views
 
-class ViewCount(models.Model):
-    post = models.ForeignKey(Post, related_name='blogpost_view_count', on_delete=models.CASCADE)
-    ip_address = models.CharField(max_length=255)
+
+class AllVisitCount(models.Model):
+    ip_address = models.CharField(max_length=150)
     created = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f'{self.ip_address}'
+
+
+class ViewCount(models.Model):
+    post = models.ForeignKey(Post, related_name='blogpost_view_count', on_delete=models.CASCADE)
+    ip_address = models.ForeignKey(AllVisitCount, on_delete=models.CASCADE)
+    created = models.DateTimeField(default=timezone.now)
+    count = models.IntegerField()
+    country = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.ip_address}'
+
