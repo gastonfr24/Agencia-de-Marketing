@@ -10,7 +10,8 @@ from rest_framework import status
 from rest_framework import permissions
 from rest_framework.parsers import MultiPartParser, FormParser 
 import requests
-
+from django.db import transaction
+from django.conf import settings
 
 # Busqueda
 from django.db.models.query_utils import Q
@@ -24,6 +25,10 @@ from .pagination import *
 
 # Otros
 from slugify import slugify
+
+
+API_IP_ACCESS_KEY = settings.API_IP_ACCESS_KEY
+
 
 class BlogListView(APIView):
     permissions_classes = (permissions.AllowAny,)
@@ -93,16 +98,9 @@ class PostDetailView(APIView):
             
             all_visits = AllVisitCount(ip_address=ip)
             all_visits.save()
-
             
             if not ViewCount.objects.filter(post=post, ip_address__ip_address=all_visits.ip_address):
                 view = ViewCount(post=post, ip_address=all_visits, count= 1)
-                try:
-                    r = requests.get('https://freegeoip.app/json/8.8.8.8')
-                    data = r.json()
-                    view.country = data["country_name"]
-                except:
-                    pass
                 view.save()
                 post.views += 1
                 post.save()

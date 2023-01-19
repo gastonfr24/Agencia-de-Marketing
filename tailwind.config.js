@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        "orange-cus":'#ff561e'
+        "orange-cus":'#ff561e',
+        "violet-cus":'#8884d8',
       },
       maxWidth: {
         '1700': '1700px',

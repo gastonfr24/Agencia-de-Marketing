@@ -311,9 +311,9 @@ budget
           <p className="m-2 ml-4 col-span-9 text-sm font-regular leading-6 text-gray-500">
           Aceptar los 
           <span className="text-indigo-500">
-            <Link to='/terms'>  Términos de Servicios </Link>
+            <Link to='/politicas-y-privacidad'>  Términos de Servicios </Link>
                             y
-            <Link to='/privacy'>  Políticas de Privacidad</Link>
+            <Link to='/politicas-y-privacidad'>  Políticas de Privacidad</Link>
                </span>
           </p>
 

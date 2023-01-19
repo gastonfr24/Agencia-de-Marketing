@@ -3,10 +3,13 @@ from apps.category.models import Category
 from django.utils import timezone
 from ckeditor.fields import RichTextField 
 import uuid
-
+import requests
+from django.conf import settings
 
 from django.conf import settings
 User = settings.AUTH_USER_MODEL
+
+API_IP_ACCESS_KEY = settings.API_IP_ACCESS_KEY
 
 # Directorio de Imagen
 def blog_thumbnail_directory(instance, filename):
@@ -56,14 +59,21 @@ class AllVisitCount(models.Model):
     def __str__(self):
         return f'{self.ip_address}'
 
-
 class ViewCount(models.Model):
     post = models.ForeignKey(Post, related_name='blogpost_view_count', on_delete=models.CASCADE)
     ip_address = models.ForeignKey(AllVisitCount, on_delete=models.CASCADE)
     created = models.DateTimeField(default=timezone.now)
-    count = models.IntegerField()
+    count = models.IntegerField(default=1)
     country = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return f'{self.ip_address}'
 
+    def save(self, *args, **kwargs):
+        try:
+            r = requests.get(f'http://api.ipstack.com/{self.ip_address}?api_key='+API_IP_ACCESS_KEY)
+            data = r.json()
+            self.country = data["country_name"]
+        except:
+            pass
+        super().save(*args, **kwargs)

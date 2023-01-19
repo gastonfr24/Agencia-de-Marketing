@@ -4,7 +4,7 @@ function CaseCard({data}) {
   return (
     <div key={data.title} className="group flex flex-col overflow-hidden rounded-lg shadow-lg">
     <div className="flex-shrink-0">
-      <img className="sm:h-96 w-full object-cover group-hover:scale-95 transition duration-300 ease-in-out" src={data.imageUrl} alt="" />
+      <img className="sm:h-full w-full object-cover group-hover:scale-95 transition duration-300 ease-in-out" src={data.imageUrl} alt="" />
     </div>
     <div className="flex flex-1 flex-col justify-between bg-white sm:p-6">
       <div className="flex-1">

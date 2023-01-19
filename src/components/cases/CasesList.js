@@ -1,17 +1,18 @@
 import CaseCard from "./CaseCard"
 import Carousel from "@itseasy21/react-elastic-carousel"
+import onlypy from "assets/img/only.png"
 
 const posts = [
   {
-    title: 'Boost your conversion rate',
+    title: 'Only Py | Plataforma de cursos',
     href: '#',
     category: { name: 'Article', href: '#' },
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+      'Only Py es una plataforma en línea de educación donde los usuarios pueden aprender Python de manera efectiva y enfocada. Con cursos diseñados por expertos en la materia y una interfaz intuitiva, Only Py ofrece una experiencia de aprendizaje en línea única y eficaz para aquellos que buscan mejorar sus habilidades en Python.',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
     imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+      onlypy,
     readingTime: '6 min',
     author: {
       name: 'Roel Aufderehar',
@@ -60,15 +61,15 @@ const posts = [
 
 const  breakPoints = [
   { width: 1, itemsToShow: 1, itemsToScroll: 1 },
-  { width: 750, itemsToShow: 2, itemsToScroll: 2 },
-  { width: 1000, itemsToShow: 2, itemsToScroll: 2 },
+  { width: 750, itemsToShow: 1, itemsToScroll: 1 },
+  { width: 1000, itemsToShow: 1, itemsToScroll: 1 },
   // { width: 1450, itemsToShow: 5 },
   // { width: 1750, itemsToShow: 6 },
 ]
 
 function CasesList() {
   return(
-    <div className="relative pt-16 pb-2 lg:pb-28">
+    <div className="relative pt-16 pb-2 lg:pb-28 w-10/12 mx-auto">
     <div className="absolute inset-0">
       <div className="h-1/3 bg-white sm:h-2/3" />
     </div>

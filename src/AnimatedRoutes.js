@@ -18,6 +18,7 @@ import Search from "containers/pages/Search";
 import PostDetail from "containers/pages/PostDetail";
 import Ecommerce from "./containers/pages/cases/Ecommerce";
 import JavascriptDev from "containers/pages/services/JavascriptDev";
+import PrivacyTerms from "components/footer/PrivacyTerms";
 
 export default function AnimatedRoutes() {
     const location = useLocation()
@@ -39,6 +40,7 @@ export default function AnimatedRoutes() {
     <Route path="/search/:term" element={<Search />} />
     <Route path="/category/:slug" element={<Category />} />
     <Route path="/contacto" element={<Contact />} />
+    <Route path="/politicas-y-privacidad" element={<PrivacyTerms />} />
 
       {/* Cases */}
       <Route path="/casos/ecommerce" element={<Ecommerce />} />

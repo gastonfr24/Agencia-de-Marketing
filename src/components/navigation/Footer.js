@@ -3,10 +3,10 @@ import logo from "assets/img/s.png"
 
 const navigation = {
   solutions: [
-    { name: 'Marketing', href: '#' },
+/*     { name: 'Marketing', href: '#' },
     { name: 'Analytics', href: '#' },
     { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
+    { name: 'Insights', href: '#' }, */
   ],
   support: [
     { name: 'Contacto', href: '/contacto' },
@@ -15,16 +15,15 @@ const navigation = {
     { name: 'Casos', href: '/casos' },
     { name: 'Servicios', href: '/servicios' },
     { name: 'Nosotros', href: '/nosotros' },
-    { name: 'Carreras', href: '/carreras' },
+/*     { name: 'Carreras', href: '/carreras' }, */
     { name: 'Blog', href: '/blog' },
   ],
   legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+    { name: 'Privacy', href: 'politicas-y-privacidad' },
+    { name: 'Terms', href: 'politicas-y-privacidad' },
   ],
   social: [
-    {
+ /*    {
       name: 'Facebook',
       href: '#',
       icon: (props) => (
@@ -71,8 +70,8 @@ const navigation = {
           />
         </svg>
       ),
-    },
-    {
+    }, */
+/*     {
       name: 'Dribbble',
       href: '#',
       icon: (props) => (
@@ -84,7 +83,7 @@ const navigation = {
           />
         </svg>
       ),
-    },
+    }, */
   ],
 }
 
@@ -165,7 +164,7 @@ function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-gray-200 pt-8">
-          <p className="text-base text-gray-400 xl:text-center">&copy; 2020 Your Company, Inc. All rights reserved.</p>
+          <p className="text-base text-gray-400 xl:text-center">&copy; 2023 Viperpy Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>
